@@ -19,4 +19,4 @@ def search_api_info_money():
     if output['Status'] == 0:
         print("error")
 
-    return output
+    return "余额为:{},总额为:{},已用额度为:{}".format(str(output['Remaining']),str(output['Total']),str(output['Used']))

@@ -1,0 +1,159 @@
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://10.0.16.10:80
+Press CTRL+C to quit
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    65    0     0  100    65      0     31  0:00:02  0:00:02 --:--:--    31100   141  100    76  100    65     28     24  0:00:02  0:00:02 --:--:--    52100   141  100    76  100    65     28     24  0:00:02  0:00:02 --:--:--    52
+112.53.2.93 - - [15/Nov/2023 12:21:53] "POST /url_test?msg_signature=b07ed388f672656da68741c022c4af9d42ec9b1c&timestamp=1700022110&nonce=1700657065 HTTP/1.1" 200 -
+223.93.162.186 - - [15/Nov/2023 12:23:38] code 400, message Bad request syntax ('SSH-2.0-OpenSSH_9.3')
+223.93.162.186 - - [15/Nov/2023 12:23:38] "SSH-2.0-OpenSSH_9.3" HTTPStatus.BAD_REQUEST -
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    65    0     0  100    65      0     86 --:--:-- --:--:-- --:--:--    86100    65    0     0  100    65      0     37  0:00:01  0:00:01 --:--:--    37100   141  100    76  100    65     31     27  0:00:02  0:00:02 --:--:--    59
+175.27.32.31 - - [15/Nov/2023 12:24:21] "POST /url_test?msg_signature=93856340b100bd68b4677899f38b79ed9b7ab728&timestamp=1700022259&nonce=1700075816 HTTP/1.1" 200 -
+112.53.2.93 - - [15/Nov/2023 12:28:27] "POST /url_test?msg_signature=2d21e19c0214bd9000d38f4bd914a636ee986bde&timestamp=1700022494&nonce=1700021885 HTTP/1.1" 200 -
+113.108.92.100 - - [15/Nov/2023 12:28:27] "POST /url_test?msg_signature=2d21e19c0214bd9000d38f4bd914a636ee986bde&timestamp=1700022494&nonce=1700021885 HTTP/1.1" 200 -
+<xml><ToUserName>ww1436e0e65a779aee</ToUserName><FromUserName>ChenJiaShun</FromUserName><CreateTime>1476422779</CreateTime><MsgType>text</MsgType><Content>余额为:0.997,总额为:1,已用额度为:0.0028179999999999998</Content><MsgId>1456453720</MsgId><AgentID>1000002</AgentID></xml>
+<xml><ToUserName>ww1436e0e65a779aee</ToUserName><FromUserName>ChenJiaShun</FromUserName><CreateTime>1476422779</CreateTime><MsgType>text</MsgType><Content>余额为:0.997,总额为:1,已用额度为:0.0028179999999999998</Content><MsgId>1456453720</MsgId><AgentID>1000002</AgentID></xml>
+Status Code 200
+JSON Response  {'id': 'chatcmpl-8L1nbgJIMbVHH23DegLRJ2JsXhkcV', 'object': 'chat.completion', 'created': 1700022495, 'model': 'gpt-3.5-turbo-0613', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '有几种方法可以让命令在服务器上继续运行，即使与服务器的 SSH 连接中断。以下是其中两种常见的方法：\n\n1. 使用 `nohup` 命令：使用 `nohup` 命令可以在后台运行命令，并忽略 SIGHUP 信号（即连接断开信号）。这样即使 SSH 连接断开，命令会继续在服务器上运行。例如：\n```\nnohup command &\n```\n\n此命令将在后台运行 `command` 命令，并将输出重定向到一个文件名为 `nohup.out` 的文件中。\n\n2. 使用 `tmux` 或 `screen` 工具：`tmux` 或 `screen` 是终端复用工具，可以创建会话并在会话中运行命令。即使 SSH 连接断开，会话仍然保持活动状态，命令会继续在服务器上运行。使用 `tmux` 或 `screen` 的基本步骤如下：\n\n- 安装 `tmux` 或 `screen` 工具（在 Linux 上使用相应的包管理器进行安装）。\n- 启动 `tmux` 或 `screen` 会话：\n```\ntmux    # 使用 tmux\nscreen  # 使用 screen\n```\n- 在会话中运行要持续运行的命令。\n- 挂起会话：按下组合键 `Ctrl + b`（tmux）或 `Ctrl + a`（screen）后松开，然后按下组合键 `d`，会话将进入后台。\n- 当需要再次连接到服务器并恢复会话时，使用以下命令：\n```\ntmux attach    # 使用 tmux\nscreen -r      # 使用 screen\n```\n\n这些方法可以让命令在服务器上继续运行，即使与服务器的 SSH 连接中断。选择使用哪种方法取决于个人偏好和具体需求。'}, 'finish_reason': 'stop'}], 'usage': {'prompt_tokens': 29, 'completion_tokens': 504, 'total_tokens': 533}}
+<xml><ToUserName>ww1436e0e65a779aee</ToUserName><FromUserName>ChenJiaShun</FromUserName><CreateTime>1476422779</CreateTime><MsgType>text</MsgType><Content>有几种方法可以让命令在服务器上继续运行，即使与服务器的 SSH 连接中断。以下是其中两种常见的方法：
+
+1. 使用 `nohup` 命令：使用 `nohup` 命令可以在后台运行命令，并忽略 SIGHUP 信号（即连接断开信号）。这样即使 SSH 连接断开，命令会继续在服务器上运行。例如：
+```
+nohup command &amp;
+```
+
+此命令将在后台运行 `command` 命令，并将输出重定向到一个文件名为 `nohup.out` 的文件中。
+
+2. 使用 `tmux` 或 `screen` 工具：`tmux` 或 `screen` 是终端复用工具，可以创建会话并在会话中运行命令。即使 SSH 连接断开，会话仍然保持活动状态，命令会继续在服务器上运行。使用 `tmux` 或 `screen` 的基本步骤如下：
+
+- 安装 `tmux` 或 `screen` 工具（在 Linux 上使用相应的包管理器进行安装）。
+- 启动 `tmux` 或 `screen` 会话：
+```
+tmux    # 使用 tmux
+screen  # 使用 screen
+```
+- 在会话中运行要持续运行的命令。
+- 挂起会话：按下组合键 `Ctrl + b`（tmux）或 `Ctrl + a`（screen）后松开，然后按下组合键 `d`，会话将进入后台。
+- 当需要再次连接到服务器并恢复会话时，使用以下命令：
+```
+tmux attach    # 使用 tmux
+screen -r      # 使用 screen
+```
+
+这些方法可以让命令在服务器上继续运行，即使与服务器的 SSH 连接中断。选择使用哪种方法取决于个人偏好和具体需求。</Content><MsgId>1456453720</MsgId><AgentID>1000002</AgentID></xml>
+Status Code 200
+JSON Response  {'id': 'chatcmpl-8L1ngOw75sjpOPPiSFKehlMXPjvnX', 'object': 'chat.completion', 'created': 1700022500, 'model': 'gpt-3.5-turbo-0613', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '如果你使用SSH连接到远程Linux服务器进行操作，而连接中断后，你希望让服务器上的命令继续运行，你可以使用以下方法：\n\n1. 使用"nohup"命令：在运行命令时，在命令前添加"nohup"，例如：\n   ```\n   nohup command &\n   ```\n   这样，即使SSH连接中断，命令也会在服务器继续运行，并且输出会被重定向到当前目录的"nohup.out"文件中。\n\n2. 使用"screen"命令：在SSH连接到服务器后，可以使用"screen"命令创建一个虚拟终端会话，例如：\n   ```\n   screen\n   ```\n   然后，你可以在这个会话中运行你的命令。即使SSH连接中断，你可以重新连接到服务器，通过以下命令恢复到之前的screen会话：\n   ```\n   screen -r\n   ```\n\n无论你选择使用哪种方法，都能够在SSH连接中断后让服务器上的命令继续运行。'}, 'finish_reason': 'stop'}], 'usage': {'prompt_tokens': 29, 'completion_tokens': 281, 'total_tokens': 310}}
+<xml><ToUserName>ww1436e0e65a779aee</ToUserName><FromUserName>ChenJiaShun</FromUserName><CreateTime>1476422779</CreateTime><MsgType>text</MsgType><Content>如果你使用SSH连接到远程Linux服务器进行操作，而连接中断后，你希望让服务器上的命令继续运行，你可以使用以下方法：
+
+1. 使用"nohup"命令：在运行命令时，在命令前添加"nohup"，例如：
+   ```
+   nohup command &amp;
+   ```
+   这样，即使SSH连接中断，命令也会在服务器继续运行，并且输出会被重定向到当前目录的"nohup.out"文件中。
+
+2. 使用"screen"命令：在SSH连接到服务器后，可以使用"screen"命令创建一个虚拟终端会话，例如：
+   ```
+   screen
+   ```
+   然后，你可以在这个会话中运行你的命令。即使SSH连接中断，你可以重新连接到服务器，通过以下命令恢复到之前的screen会话：
+   ```
+   screen -r
+   ```
+
+无论你选择使用哪种方法，都能够在SSH连接中断后让服务器上的命令继续运行。</Content><MsgId>1456453720</MsgId><AgentID>1000002</AgentID></xml>
+Status Code 200
+JSON Response  43.137.215.241 - - [15/Nov/2023 12:28:37] "POST /url_test?msg_signature=2d21e19c0214bd9000d38f4bd914a636ee986bde&timestamp=1700022494&nonce=1700021885 HTTP/1.1" 200 -
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    65    0     0  100    65      0     30  0:00:02  0:00:02 --:--:--    30100    65    0     0  100    65      0     20  0:00:03  0:00:03 --:--:--    20100   127  100    62  100    65     19     20  0:00:03  0:00:03 --:--:--    40
+112.53.2.93 - - [15/Nov/2023 12:28:47] "POST /url_test?msg_signature=b94cb8539a58a5588342ae69b5dc80c773772b25&timestamp=1700022524&nonce=1699997070 HTTP/1.1" 200 -
+112.53.2.93 - - [15/Nov/2023 12:29:07] "POST /url_test?msg_signature=e1f3c7ab7597e9afb8e658ccd7faeee495101d88&timestamp=1700022533&nonce=1699940155 HTTP/1.1" 200 -
+{'id': 'chatcmpl-8L1nl1f6n6Fl0w8vURm1zhX0jYr3k', 'object': 'chat.completion', 'created': 1700022505, 'model': 'gpt-3.5-turbo-0613', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '如果你的SSH连接中断，你可以使用以下几种方法让命令在服务器上继续运行：\n\n1. 使用nohup命令：nohup命令可以在后台运行一个命令，并且不受SSH连接中断的影响。使用方法如下：\n   ```\n   nohup command &\n   ```\n   其中，command是你想要在服务器上继续运行的命令。\n\n2. 使用tmux或screen工具：tmux和screen是两个终端复用工具，可以在SSH连接中断后保持你的会话和命令的运行状态。你可以在服务器上安装并使用这两个工具来完成这个功能。\n\n   1. 安装tmux或screen：\n      - 对于Ubuntu/Debian系统，使用以下命令安装tmux:\n   \n         ```\n         sudo apt-get update\n         sudo apt-get install tmux\n         ```\n\n      - 对于CentOS/RHEL系统，使用以下命令安装tmux:\n   \n         ```\n         sudo yum install epel-release\n         sudo yum install tmux\n         ```\n\n   2. 启动tmux或screen：\n      - 使用tmux命令启动tmux：\n   \n         ```\n         tmux\n         ```\n\n         这将创建一个新的tmux会话，并在其中打开一个新的终端。\n\n      - 使用screen命令启动screen：\n   \n         ```\n         screen\n         ```\n\n         这将创建一个新的screen会话，并在其中打开一个新的终端。\n\n   3. 运行你的命令：\n   \n      在tmux或screen会话中打开一个新的终端，然后运行你想要在服务器上继续运行的命令。\n\n   4. 断开SSH连接：\n   \n      断开SSH连接后，你的命令将在tmux或screen会话中继续运行。\n\n   5. 重新连接服务器：\n   \n      当你重新连接服务器时，你可以重新附加到之前的tmux或screen会话上，查看命令的运行状态并继续操作。\n\n以上方法可以让你的命令在服务器上继续运行，即使你的SSH连接中断。'}, 'finish_reason': 'stop'}], 'usage': {'prompt_tokens': 29, 'completion_tokens': 549, 'total_tokens': 578}}
+<xml><ToUserName>ww1436e0e65a779aee</ToUserName><FromUserName>ChenJiaShun</FromUserName><CreateTime>1476422779</CreateTime><MsgType>text</MsgType><Content>如果你的SSH连接中断，你可以使用以下几种方法让命令在服务器上继续运行：
+
+1. 使用nohup命令：nohup命令可以在后台运行一个命令，并且不受SSH连接中断的影响。使用方法如下：
+   ```
+   nohup command &amp;
+   ```
+   其中，command是你想要在服务器上继续运行的命令。
+
+2. 使用tmux或screen工具：tmux和screen是两个终端复用工具，可以在SSH连接中断后保持你的会话和命令的运行状态。你可以在服务器上安装并使用这两个工具来完成这个功能。
+
+   1. 安装tmux或screen：
+      - 对于Ubuntu/Debian系统，使用以下命令安装tmux:
+   
+         ```
+         sudo apt-get update
+         sudo apt-get install tmux
+         ```
+
+      - 对于CentOS/RHEL系统，使用以下命令安装tmux:
+   
+         ```
+         sudo yum install epel-release
+         sudo yum install tmux
+         ```
+
+   2. 启动tmux或screen：
+      - 使用tmux命令启动tmux：
+   
+         ```
+         tmux
+         ```
+
+         这将创建一个新的tmux会话，并在其中打开一个新的终端。
+
+      - 使用screen命令启动screen：
+   
+         ```
+         screen
+         ```
+
+         这将创建一个新的screen会话，并在其中打开一个新的终端。
+
+   3. 运行你的命令：
+   
+      在tmux或screen会话中打开一个新的终端，然后运行你想要在服务器上继续运行的命令。
+
+   4. 断开SSH连接：
+   
+      断开SSH连接后，你的命令将在tmux或screen会话中继续运行。
+
+   5. 重新连接服务器：
+   
+      当你重新连接服务器时，你可以重新附加到之前的tmux或screen会话上，查看命令的运行状态并继续操作。
+
+以上方法可以让你的命令在服务器上继续运行，即使你的SSH连接中断。</Content><MsgId>1456453720</MsgId><AgentID>1000002</AgentID></xml>
+<xml><ToUserName>ww1436e0e65a779aee</ToUserName><FromUserName>ChenJiaShun</FromUserName><CreateTime>1476422779</CreateTime><MsgType>text</MsgType><Content>余额为:0.983,总额为:1,已用额度为:0.01679</Content><MsgId>1456453720</MsgId><AgentID>1000002</AgentID></xml>
+Status Code 200
+JSON Response  {'id': 'chatcmpl-8L1oFX9J3s13i7DhMqV2EVVKutCLG', 'object': 'chat.completion', 'created': 1700022535, 'model': 'gpt-3.5-turbo-0613', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '要让命令在服务器上继续运行，可以使用以下几种方法：\n\n1. 使用nohup命令：在运行命令时，在命令前加上nohup，并将输出重定向到一个文件中。例如，要运行的命令为"command"，可以使用以下命令：nohup command > output.log 2>&1 &。这样，无论终端连接是否中断，命令都会在服务器上继续运行，并将输出保存在output.log文件中。\n\n2. 使用screen命令：通过使用screen命令，可以创建一个虚拟终端，将命令运行在该虚拟终端中。连接中断后，可以重新连接到服务器并恢复之前创建的screen会话，命令会继续在其中运行。要使用screen命令，首先需要安装：sudo apt-get install screen。然后，可以通过以下步骤来使用screen命令：\n   1) 运行screen：screen\n   2) 在创建的虚拟终端中运行命令。\n   3) 连接中断后，再次连接到服务器。\n   4) 恢复之前的screen会话：screen -r\n\n3. 使用tmux命令：类似于screen，tmux也可以创建一个虚拟终端，并在其中运行命令。tmux的使用方式与screen类似。首先需要安装：sudo apt-get install tmux。然后，可以通过以下步骤来使用tmux命令：\n   1) 运行tmux：tmux\n   2) 在创建的虚拟终端中运行命令。\n   3) 连接中断后，再次连接到服务器。\n   4) 恢复之前的tmux会话：tmux attach\n\n无论使用哪种方法，都可以让命令在linux服务器上持续运行，即使ssh连接中断。'}, 'finish_reason': 'stop'}], 'usage': {'prompt_tokens': 29, 'completion_tokens': 497, 'total_tokens': 526}}
+<xml><ToUserName>ww1436e0e65a779aee</ToUserName><FromUserName>ChenJiaShun</FromUserName><CreateTime>1476422779</CreateTime><MsgType>text</MsgType><Content>要让命令在服务器上继续运行，可以使用以下几种方法：
+
+1. 使用nohup命令：在运行命令时，在命令前加上nohup，并将输出重定向到一个文件中。例如，要运行的命令为"command"，可以使用以下命令：nohup command &gt; output.log 2&gt;&amp;1 &amp;。这样，无论终端连接是否中断，命令都会在服务器上继续运行，并将输出保存在output.log文件中。
+
+2. 使用screen命令：通过使用screen命令，可以创建一个虚拟终端，将命令运行在该虚拟终端中。连接中断后，可以重新连接到服务器并恢复之前创建的screen会话，命令会继续在其中运行。要使用screen命令，首先需要安装：sudo apt-get install screen。然后，可以通过以下步骤来使用screen命令：
+   1) 运行screen：screen
+   2) 在创建的虚拟终端中运行命令。
+   3) 连接中断后，再次连接到服务器。
+   4) 恢复之前的screen会话：screen -r
+
+3. 使用tmux命令：类似于screen，tmux也可以创建一个虚拟终端，并在其中运行命令。tmux的使用方式与screen类似。首先需要安装：sudo apt-get install tmux。然后，可以通过以下步骤来使用tmux命令：
+   1) 运行tmux：tmux
+   2) 在创建的虚拟终端中运行命令。
+   3) 连接中断后，再次连接到服务器。
+   4) 恢复之前的tmux会话：tmux attach
+
+无论使用哪种方法，都可以让命令在linux服务器上持续运行，即使ssh连接中断。</Content><MsgId>1456453720</MsgId><AgentID>1000002</AgentID></xml>
+Status Code 200
+JSON Response  113.108.92.100 - - [15/Nov/2023 12:29:10] "POST /url_test?msg_signature=e1f3c7ab7597e9afb8e658ccd7faeee495101d88&timestamp=1700022533&nonce=1699940155 HTTP/1.1" 200 -
+43.137.215.241 - - [15/Nov/2023 12:29:15] "POST /url_test?msg_signature=e1f3c7ab7597e9afb8e658ccd7faeee495101d88&timestamp=1700022533&nonce=1699940155 HTTP/1.1" 200 -
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    65    0     0  100    65      0     38  0:00:01  0:00:01 --:--:--    38100   127  100    62  100    65     33     35  0:00:01  0:00:01 --:--:--    69
+112.53.2.93 - - [15/Nov/2023 12:30:39] "POST /url_test?msg_signature=6ec57545d4d633ec5c2d1852d95837749c172c1a&timestamp=1700022637&nonce=1700318563 HTTP/1.1" 200 -
+./start.sh: line 2:  3487 Killed                  sudo flask run --host 0.0.0.0 --port 80

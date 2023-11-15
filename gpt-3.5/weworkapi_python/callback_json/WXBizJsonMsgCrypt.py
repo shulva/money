@@ -17,15 +17,17 @@ from Crypto.Cipher import AES
 import sys
 import socket
 import json
+import ierror
+from importlib import reload
 
 reload(sys)
-import ierror 
-sys.setdefaultencoding('utf-8') 
+sys.setdefaultencoding('utf-8')
 
 """
 关于Crypto.Cipher模块，ImportError: No module named 'Crypto'解决方案
 请到官方网站 https://www.dlitz.net/software/pycrypto/ 下载pycrypto。
 下载后，按照README中的“Installation”小节的提示进行pycrypto安装。
+注:直接安装pycryptodome就行，不用这么麻烦
 """
 class FormatException(Exception):
     pass
