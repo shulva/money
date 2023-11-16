@@ -1,5 +1,4 @@
 import requests
-
 api_key = "sk-2fGS2KVZyjdYpALZ4c22F1146eD847A88071EeB277F247Bc"
 
 def query_text(text):
