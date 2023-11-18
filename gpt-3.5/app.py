@@ -19,7 +19,7 @@ ip = '124.220.52.35'
 url_push = 'https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token={access}'
 url_get_access = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid={ID}&corpsecret={SECRET}'
 agent_id = 1000002
-
+old_msg = 0 #查重
 
 @app.route('/url_test', methods=['GET'])
 def back_get():
@@ -72,7 +72,7 @@ def app_push(text):
         "enable_duplicate_check": 1,
         "duplicate_check_interval": 1800
     }
-    
+
     response_push = requests.post(url_push.format(access=access_token), json=data,headers=HEADER)
     print(response_push.json())
 
@@ -83,6 +83,12 @@ def back_post():
     msg = get_data.get('msg_signature')
     time = get_data.get('timestamp')
     nonce = get_data.get('nonce')
+
+    global old_msg
+    if old_msg == msg:
+        return ''
+
+    old_msg = msg
 
     wxcpt = WXBizMsgCrypt3.WXBizMsgCrypt(token, EncodingAESKey, corp_id)
 
